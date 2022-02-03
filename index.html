@@ -10,6 +10,17 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
     
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+      <style>
+        .contenedor{
+          
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+        }
+      </style>
+      
     </head>
 
     <body>
@@ -21,7 +32,8 @@
 		
 		<div class="jumbotron">
 			<h1 id="title">{{ col.collection.title }}</h1>
-		</div>
+    </div>
+    <div class="contenedor">
 		<div class="card-group">
 		<div v-for="item in col.collection.items" class="items">
 		<div class="card" style="width: 18rem;">
@@ -30,8 +42,9 @@
     <dt>{{data.prompt}}</dt>
     <dd>{{data.value}}</dd>
   </div>
-    <a href="{{item.href}}" class="btn btn-primary">Ver</a>
+    <a type="button" v-bind:href="item.href" class="btn btn-primary w-50">Ver</a>
   </div>
+</div>
 </div>
 
 		</div>
